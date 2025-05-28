@@ -24,5 +24,15 @@
   "bugs": {
     "url": "https://github.com/jgraciolli/job-finder/issues"
   },
-  "homepage": "https://github.com/jgraciolli/job-finder#readme"
+  "homepage": "https://github.com/jgraciolli/job-finder#readme",
+  "dependencies": {
+    "body-parser": "^2.2.0",
+    "express": "^5.1.0",
+    "express-handlebars": "^8.0.1",
+    "sequelize": "^6.37.7",
+    "sqlite3": "^5.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
 }
