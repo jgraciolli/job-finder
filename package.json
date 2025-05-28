@@ -1,0 +1,28 @@
+{
+  "name": "job-finder",
+  "version": "1.0.0",
+  "description": "Job finder page that provides many job vacancies for programmers.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jgraciolli/job-finder.git"
+  },
+  "keywords": [
+    "dev",
+    "jobs",
+    "dev",
+    "job",
+    "finder",
+    "dev",
+    "opportunities"
+  ],
+  "author": "João Victor Graciolli Ramos",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jgraciolli/job-finder/issues"
+  },
+  "homepage": "https://github.com/jgraciolli/job-finder#readme"
+}
