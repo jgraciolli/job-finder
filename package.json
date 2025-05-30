@@ -27,6 +27,7 @@
   "homepage": "https://github.com/jgraciolli/job-finder#readme",
   "dependencies": {
     "body-parser": "^2.2.0",
+    "bootstrap": "^5.3.6",
     "express": "^5.1.0",
     "express-handlebars": "^8.0.1",
     "sequelize": "^6.37.7",

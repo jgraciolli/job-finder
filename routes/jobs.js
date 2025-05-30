@@ -23,4 +23,8 @@ router.post('/add', (req, res) => {
         .catch(err => console.log(err))
 })
 
+router.post('/add/test', (req, res) => {
+    console.log(req.body)   
+})
+
 module.exports = router
