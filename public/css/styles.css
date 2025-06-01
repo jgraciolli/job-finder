@@ -80,7 +80,7 @@
   border: 1px solid transparent;
 }
 
-/* lista */
+/* job-list */
 
 #jobs-container {
   padding: 0 100px;
@@ -237,7 +237,7 @@
   text-decoration: none;
 }
 
-/* responsivo */
+/* responsivity */
 
 @media (max-width: 481px) {
 
