@@ -6,6 +6,8 @@ const bodyParser = require('body-parser')
 const exphbs = require('express-handlebars')
 const path = require('path')
 const Job = require('./models/Job')
+const Sequelize = require('sequelize')
+const Op = Sequelize.Op
 
 // start server
 app.listen(PORT, () => {
@@ -15,10 +17,7 @@ app.listen(PORT, () => {
 // add body-parser tool
 app.use(bodyParser.urlencoded({ extended: false }))
 
-// add JSON interpreter
-app.use(express.json())
-
-// add handlebars
+// handlebars setup
 app.set('view engine', 'handlebars')
 app.set('views', path.join(__dirname, 'views'))
 app.engine('handlebars', exphbs.engine({ defaultLayout: 'main'}))
@@ -35,21 +34,32 @@ db.authenticate()
         console.log(`Error when connecting to the database: ${err.message}`)
     })
 
-// ---ROUTES SECTION---
 
+// ---ROUTES SECTION---
 // main route
 app.get('/', (req, res) => {
-    Job.findAll({
+    let queryObj = {
         order: [
             ['createdAt', 'DESC']
         ]
-    })
-    .then((jobs) => {
-        console.log(jobs)
+    }
+       
+    let search = req.query.job    
+    if (search) {
+        queryObj.where = {
+            title: {
+                [Op.like]: '%' + search + '%'
+            }
+        }
+    }
+   
+    Job.findAll(queryObj)
+    .then((jobs) => {       
         res.render('index', {
-            jobs
-        })
+            jobs, search
+        })        
     })
+    .catch(err => console.log(err))    
 })
 
 // jobs routes

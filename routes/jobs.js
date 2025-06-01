@@ -2,8 +2,8 @@ const express = require('express')
 const router = express.Router()
 const Job = require('../models/Job')
 
-router.get('/getAll', (req, res) => {
-    console.log('Found all jobs')
+router.get('/add', (req, res) => {
+    res.render('add')
 })
 
 router.post('/add', (req, res) => {
@@ -23,8 +23,8 @@ router.post('/add', (req, res) => {
         .catch(err => console.log(err))
 })
 
-router.post('/add/test', (req, res) => {
-    console.log(req.body)   
+router.get('/view/:id', (req, res) => {
+    res.render('view')
 })
 
 module.exports = router

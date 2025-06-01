@@ -4,7 +4,8 @@
   "description": "Job finder page that provides many job vacancies for programmers.",
   "main": "app.js",
   "scripts": {
-    "dev": "nodemon app.js"
+    "dev": "nodemon app.js",
+    "test": "node app.js"
   },
   "repository": {
     "type": "git",
